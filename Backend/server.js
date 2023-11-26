@@ -80,7 +80,7 @@ app.get('/api/books/:id' ,async(req,res)=>{
   res.send(book);
 })
 
-//Put comment here
+{/* Updating a book in the database by id. */}
 app.put('/api/book/:identifier', async(req, res) =>{
   console.log("Edit: "+req.params.identifier)
   let book = await bookModel.findByIdAndUpdate(req.params.identifier,req.body,{new:true});
