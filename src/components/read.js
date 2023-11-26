@@ -14,12 +14,13 @@ function Read() {
     useEffect(() => {
         {/* To make a http get call that will return the json data from and assign it to the component state. Use the react hook useState:.*/ }
         axios.get('http://localhost:4000/api/books')
+         {/* If the request is successful, update the component state with the received data. */}
             .then(
                 (response) => {
                     setData(response.data);
                 }
             )
-
+         {/* If there's an error, log it to the console for debugging. */}
             .catch(
                 (error) => {
                     console.log(error);
@@ -29,8 +30,9 @@ function Read() {
 
     return (
         <div>
-
+    {/* Displaying a heading in the component. */}
             <h2>Hello from my Read component</h2>
+        {/* Rendering the Book component and passing the book data as a prop. */}
             <Book myBook={data}></Book>
         </div>
 
