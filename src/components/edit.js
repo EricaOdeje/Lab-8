@@ -29,7 +29,7 @@ export default function Edit(props) {
         axios.get('http://localhost:4000/api/books/' + id)
             .then((response) => {
 
-                {/* /Assign Response data to the arrays using useState. */ }
+                {/* Assign Response data to the arrays using useState. */ }
                 setTitle(response.data.title);
                 setTitle(response.data.title);
                 setCover(response.data.cover);
@@ -41,16 +41,18 @@ export default function Edit(props) {
     }, []);
     const handleSubmit = (event) => {
         event.preventDefault();
+    {/* Creating a new book object with updated data. */ }
         const newBook = {
             id: id,
             title: title,
             cover: cover,
             author: author
         };
-
+ {/* Making an HTTP PUT request to update the book data. */ }
         axios.put('http://localhost:4000/api/book/' + id, newBook)
             .then((res) => {
                 console.log(res.data);
+                 {/* Navigating to the 'read' page after successful book edit. */ }
                 navigate('/read');
             });
     }
