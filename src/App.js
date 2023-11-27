@@ -32,7 +32,7 @@ function App() {
           <Route path='/' element={<Content></Content>}></Route>
           <Route path='read' element={<Read></Read>}></Route>
           <Route path='/create' element={<Create></Create>}></Route>
-          {/*  I added a route path for the edit FINISH COMMENT */}
+          {/*  I added a route path for the edit to change the books */}
           <Route path='/edit/:id' element={<Edit></Edit>}></Route>
         </Routes>
       </div>
